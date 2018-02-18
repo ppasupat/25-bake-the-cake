@@ -47,7 +47,13 @@ body {
 /* ################################ */
 /* common */
 
-.nav, .obj, .item { position: absolute; }
+.floor, .nav, .obj, .item { position: absolute; }
+
+.floor {
+  left: 0; top: 300px; width: 800px; height: 50px;
+}
+
+.obj.taken { display: none; }
 
 .obj-stored { display: none; }
 .obj-stored.reachable { display: block; }
@@ -55,7 +61,7 @@ body {
 
 .item { display: none; }
 .item.taken { display: block; }
-.item.selected { background-color: #BB9; box-shadow: 0 0 3px 6px #BB9; }
+.item.selected { background-color: #EEC; box-shadow: 0 0 3px 6px #EEC; }
 .item.used { opacity: 0.5; }
 
 /* ################################ */
@@ -86,12 +92,30 @@ body {
 }
 
 .nav-down {
-  left: 315px; top: 300px; width: 70px; height: 50px;
+  left: 365px; top: 300px; width: 70px; height: 50px;
   background-image: url('assets/down.png');
 }
 
 /* ################################ */
 /* kitchen */
+
+#scene-kitchen { background-color: #FDF; }
+#f-kitchen { background-color: #EBE; }
+
+#o-mixer {
+  left: 110px; top: 20px; width: 100px; height: 120px;
+  background-image: url('assets/mixer.png');
+}
+
+#o-table {
+  left: 450px; top: 250px; width: 240px; height: 70px;
+  background-image: url('assets/table.png');
+}
+
+#n-kitchen-tabletop {
+  left: 490px; top: 190px; width: 120px; height:60px;
+  background-image: url('assets/bowl.png');
+}
 
 #o-cupboard {
   left: 420px; top: 20px; width: 260px; height: 140px;
@@ -100,40 +124,144 @@ body {
 #o-cupboard.open {
   background-image: url('assets/cupboard-open.png');
 }
-
 #o-sugar {
   left: 500px; top: 65px; width: 100px; height: 80px;
   background-image: url('assets/sugar.png');
 }
 
 #o-fridge {
-  left: 70px; top: 150px; width: 170px; height: 170px;
+  left: 50px; top: 150px; width: 170px; height: 170px;
   background-image: url('assets/fridge-close.png');
 }
 #o-fridge.open {
   background-image: url('assets/fridge-open.png');
 }
-
 #o-butter {
-  left: 110px; top: 230px; width: 30px; height: 70px;
+  left: 90px; top: 230px; width: 30px; height: 70px;
   background-image: url('assets/butter.png');
+}
+
+#o-oven {
+  left: 230px; top: 150px; width: 170px; height: 170px;
+  background-image: url('assets/oven.png');
 }
 
 /* ################################ */
 /* living */
 
+#scene-living { background-color: #DFF; }
+#f-living { background-color: #BEE; }
+
+#o-drawer {
+  left: 70px; top: 50px; width: 180px; height: 270px;
+  background-image: url('assets/drawer.png');
+}
+#o-drawer.open {
+  background-image: url('assets/drawer-open.png');
+}
+
+#code1, #code2, #code3 {
+  position: absolute;
+  left: 100px; width: 60px; height: 70px;
+  background-image: url('assets/code.png');
+}
+#code1 {top: 20px;}
+#code2 {top: 100px;}
+#code3 {top: 180px;}
+
+#o-machine {
+  left: 270px; top: 10px; width: 310px; height: 270px;
+  background-image: url('assets/machine.png');
+}
+#o-machine-output {
+  left: 10px; top: 10px; width: 290px; height: 150px;
+}
+#o-machine-input {
+  left: 10px; top: 170px; width: 100px; height: 90px;
+}
+
+#o-plant {
+  left: 590px; top: 220px; width: 160px; height: 110px;
+  background-image: url('assets/plant.png');  
+}
+#o-plant.soiled {
+  top: 200px; height: 130px;
+  background-image: url('assets/plant-soiled.png');  
+}
+
 /* ################################ */
 /* hall */
 
+#scene-hall { background-color: #DDF; }
+#f-hall { background-color: #BBE; }
+
+#o-copernicus {
+  left: 70px; top: 20px; width: 220px; height: 220px;
+  background-image: url('assets/copernicus.png');
+}
+#o-B {
+  left: 130px; top: 90px; width: 80px; height: 40px;
+  background-image: url('assets/glasses.png');
+}
+#o-galileo {
+  left: 300px; top: 20px; width: 130px; height: 105px;
+  background-image: url('assets/galileo.png');
+}
+#o-newton {
+  left: 300px; top: 135px; width: 130px; height: 105px;
+  background-image: url('assets/newton.png');
+}
+#o-newton.moved {
+  left: 340px; top: 175px;
+}
+#o-apple {
+  left: 300px; top: 135px; width: 60px; height: 60px;
+  background-image: url('assets/apple.png');
+}
+
+#o-stars {
+  left: 450px; top: 20px; width: 320px; height: 150px;
+  background-image: url('assets/stars.png');
+}
+#o-C {
+  left: 580px; top: 30px; width: 120px; height: 120px;
+  background-image: url('assets/moon.png');
+}
+
+#o-chicken {
+  left: 540px; top: 190px; width: 200px; height: 150px;
+  background-image: url('assets/chicken-eggs.png');
+}
+#o-chicken.eggless {
+  background-image: url('assets/chicken.png');
+}
+
 /* ################################ */
 /* item */
+
+#i-B {
+  left: 10px; top: 10px; width: 40px; height: 80px;
+  background-image: url('assets/B.png');
+}
+#i-C {
+  left: 50px; top: 70px; width: 50px; height: 70px;
+  background-image: url('assets/C.png');
+}
 
 #i-butter {
   left: 200px; top: 10px; width: 30px; height: 70px;
   background-image: url('assets/butter.png');
 }
-
 #i-sugar {
   left: 440px; top: 10px; width: 100px; height: 80px;
   background-image: url('assets/sugar.png');
+}
+#i-eggs {
+  left: 240px; top: 10px; width: 90px; height: 70px;
+  background-image: url('assets/eggs.png');
+}
+
+#i-mixer {
+  left: 550px; top: 15px; width: 100px; height: 120px;
+  background-image: url('assets/mixer.png');
 }

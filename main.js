@@ -21,6 +21,11 @@ $('.nav').click(function () {
   switchScene($(this).attr('id').split('-')[2]);
 });
 
+function take(object) {
+  $('#o-' + object).addClass('taken');
+  $('#i-' + object).addClass('taken');
+}
+
 $('.item').click(function () {
   var x = $(this);
   if (!x.hasClass('taken') || x.hasClass('used')) return;
@@ -47,14 +52,17 @@ $('#o-start').click(function () {
 // ################################
 // kitchen
 
+$('#o-mixer').click(function () {
+  take('mixer');
+});
+
 $('#o-cupboard').click(function () {
   $(this).toggleClass('open');
   $('#o-sugar').toggleClass('reachable');
 });
 
 $('#o-sugar').click(function () {
-  $(this).addClass('taken');
-  $('#i-sugar').addClass('taken');
+  take('sugar');
 });
   
 $('#o-fridge').click(function () {
@@ -63,12 +71,37 @@ $('#o-fridge').click(function () {
 });
 
 $('#o-butter').click(function () {
-  $(this).addClass('taken');
-  $('#i-butter').addClass('taken');
+  take('butter');
 });
 
+// ################################
+// living
 
+$('#code1, #code2, #code3').click(function () {
 
+});
+
+// ################################
+// hall
+
+$('#o-B').click(function () {
+  take('B');
+});
+
+$('#o-newton').click(function () {
+  $(this).toggleClass('moved');
+});
+
+$('#o-C').click(function () {
+  take('C');
+});
+
+$('#o-chicken').click(function () {
+  if (!$(this).hasClass('eggless')) {
+    $(this).addClass('eggless');
+    $('#i-eggs').addClass('taken');
+  }
+});
 
 // ################################
 // READY!
