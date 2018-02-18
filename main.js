@@ -77,8 +77,22 @@ $('#o-butter').click(function () {
 // ################################
 // living
 
-$('#code1, #code2, #code3').click(function () {
+var codes = { code1: 0, code2: 0, code3: 0 };
+// Debug
+var codes = { code1: 5, code2: 9, code3: 7 };
 
+$('#code1, #code2, #code3').click(function () {
+  var x = $(this), id = $(x).attr('id'), value = (codes[id] + 1) % 10;
+  codes[id] = value;
+  x.css('background-position', '-' + (value * 60) + 'px 0');
+  if (codes.code1 == 5 && codes.code2 == 9 && codes.code3 == 8) {
+    $('#o-drawer').addClass('open');
+    $('#o-seed, #o-F').addClass('reachable');
+  }
+});
+
+$('#o-F').click(function () {
+  take('F');
 });
 
 // ################################
