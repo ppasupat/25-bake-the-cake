@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=800, initial-scale=1">
   <title>Escape</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="jquery.min.js"></script>
@@ -11,20 +11,47 @@
 <body>
   <div id=game>
     <div id=scene-preload class=scene>
-      <div id=i-loading>Loading ...</div>
-      <div id=i-start-wrap><button id=i-start>START</button></div>
+      <div id=o-loading class=obj>Loading ...</div>
+      <button id=o-start class=obj>START</button>
     </div>
     <div id=scene-kitchen class=scene>
-    
+      <div id=n-kitchen-living class="nav nav-right"></div>
+      <div id=n-kitchen-table class=nav></div>
+      <div id=o-mixer class=obj></div>
+      <div id=o-S class=obj></div>
+      <div id=o-cupboard class=obj></div>
+      <div id=o-sugar class=obj></div>
+      <div id=o-fridge class=obj></div>
+      <div id=o-stove class=obj></div>
     </div>
-    <div id=scene-machine class=scene>
-    
+    <div id=scene-living class=scene>
+      <div id=n-living-kitchen class="nav nav-left"></div>
+      <div id=n-living-hall class="nav nav-right"></div>
+      <div id=n-living-drawer class=nav></div>
+      <div id=o-oil-slot class=obj></div>
+      <div id=o-oil-start class=obj></div>
+      <div id=o-oil-box class=obj></div>
+      <div id=o-plant-pot class=obj></div>
+      <div id=o-plant class=obj></div>
     </div>
     <div id=scene-hall class=scene>
-    
+      <div id=n-hall-living class="nav nav-left"></div>
+      <div id=o-B class=obj></div>
+      <div id=o-C class=obj></div>
+      <div id=o-chicken class=obj></div>
+    </div>
+    <div id=scene-table class=scene>
+      <div id=n-table-kitchen class="nav nav-down"></div>
+      <div id=o-bowl class=obj></div>
+    </div>
+    <div id=scene-drawer class=scene>
+      <div id=n-drawer-living class="nav nav-down"></div>
+      <div id=o-lock class=obj></div>
+      <div id=o-door class=obj></div>
+      <div id=o-seed class=obj></div>
+      <div id=o-F class=obj></div>
     </div>
     <div id=toolbox>
-    
     </div>
   </div>
 </body>
