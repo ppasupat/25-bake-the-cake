@@ -47,7 +47,16 @@ body {
 /* ################################ */
 /* common */
 
-.nav, .obj { position: absolute; }
+.nav, .obj, .item { position: absolute; }
+
+.obj-stored { display: none; }
+.obj-stored.reachable { display: block; }
+.obj-stored.taken { display: none; }
+
+.item { display: none; }
+.item.taken { display: block; }
+.item.selected { background-color: #BB9; box-shadow: 0 0 3px 6px #BB9; }
+.item.used { opacity: 0.5; }
 
 /* ################################ */
 /* preload */
@@ -68,22 +77,63 @@ body {
 
 .nav-left {
   left: 0; top: 140px; width: 50px; height: 70px;
-  background: url('assets/left.png');
+  background-image: url('assets/left.png');
 }
 
 .nav-right {
   left: 750px; top: 140px; width: 50px; height: 70px;
-  background: url('assets/right.png');
+  background-image: url('assets/right.png');
 }
 
 .nav-down {
   left: 315px; top: 300px; width: 70px; height: 50px;
-  background: url('assets/down.png');
+  background-image: url('assets/down.png');
 }
 
 /* ################################ */
 /* kitchen */
 
+#o-cupboard {
+  left: 420px; top: 20px; width: 260px; height: 140px;
+  background-image: url('assets/cupboard-close.png');
+}
+#o-cupboard.open {
+  background-image: url('assets/cupboard-open.png');
+}
+
+#o-sugar {
+  left: 500px; top: 65px; width: 100px; height: 80px;
+  background-image: url('assets/sugar.png');
+}
+
+#o-fridge {
+  left: 70px; top: 150px; width: 170px; height: 170px;
+  background-image: url('assets/fridge-close.png');
+}
+#o-fridge.open {
+  background-image: url('assets/fridge-open.png');
+}
+
+#o-butter {
+  left: 110px; top: 230px; width: 30px; height: 70px;
+  background-image: url('assets/butter.png');
+}
+
 /* ################################ */
 /* living */
 
+/* ################################ */
+/* hall */
+
+/* ################################ */
+/* item */
+
+#i-butter {
+  left: 200px; top: 10px; width: 30px; height: 70px;
+  background-image: url('assets/butter.png');
+}
+
+#i-sugar {
+  left: 440px; top: 10px; width: 100px; height: 80px;
+  background-image: url('assets/sugar.png');
+}
