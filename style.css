@@ -62,7 +62,7 @@ body {
 .item { display: none; z-index: 10; }
 .item.taken { display: block; }
 .item.selected { background-color: #EEC; box-shadow: 0 0 3px 6px #EEC; z-index: 5; }
-.item.used { opacity: 0.5; }
+.item.used { opacity: 0.2; }
 
 /* ################################ */
 /* preload */
@@ -104,7 +104,7 @@ body {
 
 #o-mixer {
   left: 110px; top: 20px; width: 100px; height: 120px;
-  background-image: url('assets/mixer.png');
+  background-image: url('assets/mixer-bad.png');
 }
 
 #o-table {
@@ -181,11 +181,44 @@ body {
   left: 270px; top: 10px; width: 310px; height: 270px;
   background-image: url('assets/machine.png');
 }
+
 #o-machine-output {
   left: 10px; top: 10px; width: 290px; height: 150px;
 }
+#o-machine-output-x.boil {
+  left: 100px; top: 90px; width: 100px; height: 50px;
+  background-image: url('assets/boil.png');
+}
+#o-machine-output-x.coil {
+  left: 110px; top: 90px; width: 80px; height: 50px;
+  background-image: url('assets/coil.png');
+}
+#o-machine-output-x.foil {
+  background-image: url('assets/foil.png');
+}
+#o-machine-output-x.soil {
+  left: 110px; top: 20px; width: 90px; height: 120px;
+  background-image: url('assets/soil.png');
+}
+
 #o-machine-input {
   left: 10px; top: 170px; width: 100px; height: 90px;
+}
+#o-machine-input-x.boil {
+  left: 30px; top: 5px; width: 40px; height: 80px;
+  background-image: url('assets/B.png');
+}
+#o-machine-input-x.coil {
+  left: 25px; top: 10px; width: 50px; height: 70px;
+  background-image: url('assets/C.png');
+}
+#o-machine-input-x.foil {
+  left: 25px; top: 15px; width: 50px; height: 70px;
+  background-image: url('assets/F.png');
+}
+#o-machine-input-x.soil {
+  left: 20px; top: 5px; width: 60px; height: 80px;
+  background-image: url('assets/S.png');
 }
 
 #o-plant {
@@ -274,6 +307,10 @@ body {
   left: 90px; top: 10px; width: 50px; height: 70px;
   background-image: url('assets/F.png');
 }
+#i-S {
+  left: 130px; top: 60px; width: 60px; height: 80px;
+  background-image: url('assets/S.png');
+}
 
 #i-butter {
   left: 200px; top: 10px; width: 30px; height: 70px;
@@ -290,5 +327,24 @@ body {
 
 #i-mixer {
   left: 550px; top: 15px; width: 100px; height: 120px;
-  background-image: url('assets/mixer.png');
+  background-image: url('assets/mixer-bad.png');
+}
+#i-mixer.good {
+  background-image: url('assets/mixer-good.png');
+}
+
+#i-boil {
+  left: 210px; top: 90px; width: 100px; height: 50px;
+  background-image: url('assets/boil.png');
+}
+#i-boil.buttered {
+  background-image: url('assets/boil-buttered.png');
+}
+#i-coil {
+  left: 450px; top: 95px; width: 80px; height: 50px;
+  background-image: url('assets/coil.png');
+}
+#i-soil {
+  left: 340px; top: 20px; width: 90px; height: 120px;
+  background-image: url('assets/soil.png');
 }

@@ -27,15 +27,36 @@ function take(object) {
 }
 
 $('.item').click(function () {
-  var x = $(this);
+  var x = $(this), xid = x.attr('id');
   if (!x.hasClass('taken') || x.hasClass('used')) return;
   if (x.hasClass('selected')) {
     x.removeClass('selected');
   } else {
-    $('.item').removeClass('selected');
-    x.addClass('selected');
+    // Combine items?
+    var prev = getSelected();
+    if ((xid = 'i-butter' && prev == 'i-boil') || (xid == 'i-boil' && prev == 'i-butter')) {
+      use('i-butter');
+      $('#i-boil').addClass('buttered');
+    } else if ((xid = 'i-mixer' && prev == 'i-coil') || (xid == 'i-coil' && prev == 'i-mixer')) {
+      use('i-coil');
+      $('#i-mixer').addClass('good');
+      $('#i-S').addClass('taken');
+    } else {
+      // Normal select
+      $('.item').removeClass('selected');
+      x.addClass('selected');
+    }
   }
 });
+
+function getSelected() {
+  return $('.item.selected').attr('id');
+}
+
+function use(x) {
+  $('.item').removeClass('selected');
+  $('#' + x).addClass('used');
+}
 
 // ################################
 // Game state
@@ -93,6 +114,37 @@ $('#code1, #code2, #code3').click(function () {
 
 $('#o-F').click(function () {
   take('F');
+});
+
+var machineMap = {'i-B': 'boil', 'i-C': 'coil', 'i-F': 'foil', 'i-S': 'soil'};
+
+$('#o-machine-input').click(function () {
+  if (!$('#o-machine-output-x').hasClass('xoil')) return;
+  var s = getSelected(), output = machineMap[s];
+  if (output !== undefined) {
+    $('#o-machine-input-x, #o-machine-output-x').removeClass('xoil').addClass(output);
+    use(s);
+  }
+});
+
+$('#o-machine-output-x').click(function () {
+  var s = this.className.split(/\s+/).filter(function (c) {return c.endsWith('oil');})[0];
+  $('#i-' + s).addClass('taken');
+  $(this).removeClass(s).addClass('xoil');
+  $('#o-machine-input-x').removeClass(s).addClass('xoil');
+});
+
+$('#o-plant').click(function () {
+  var x = $(this), s = getSelected();
+  if (s == 'i-soil') {
+    use('i-soil');
+    x.addClass('soiled');
+  } else if (s == 'i-seed' && x.hasClass('soiled')) {
+    use('i-seed');
+    x.addClass('planted').removeClass('soiled');
+  } else if (x.hasClass('planted')) {
+    x.addClass('harvested').removeClass('planted');
+  }
 });
 
 // ################################
