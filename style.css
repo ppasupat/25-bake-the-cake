@@ -1,0 +1,64 @@
+/* RESET */
+* {
+  font-family: sans-serif;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* ################################ */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  position: relative;
+  background-color: white;
+  width: 800px;
+  height: 500px;
+}
+
+.scene {
+  position: absolute;
+  width: 800px;
+  height: 350px;
+  left: 0; top: 0;
+  display: none;
+}
+
+#toolbox {
+  position: absolute;
+  width: 800px;
+  height: 150px;
+  left: 0; top: 350px;
+  background-color: #333;
+}
+
+/* ################################ */
+
+#i-loading {
+  margin: 100px 0 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#i-start-wrap {
+  text-align: center;
+}
+
+#i-start {
+  font-size: 36px;
+}
