@@ -208,6 +208,12 @@ $('#o-machine-input').click(function () {
   if (output !== undefined) {
     $('#o-machine-input-x, #o-machine-output-x').removeClass('xoil').addClass(output);
     use(s);
+    if (s == 'i-B' || s == 'i-C') {
+      $('#o-hint').show();
+      setTimeout(function () {
+        $('#o-hint').fadeOut(1000);
+      }, 2000);
+    }
   }
 });
 
