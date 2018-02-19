@@ -22,10 +22,12 @@ body {
 }
 
 #game {
-  position: relative;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
   background-color: white;
   width: 800px;
   height: 500px;
+  margin: auto;
 }
 
 .scene {

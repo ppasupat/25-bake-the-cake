@@ -321,8 +321,20 @@ function endGame() {
 // ################################
 // READY!
 
-// Handle screen resizing
+// Handle screen resizing to 800 x 500
+// https://stackoverflow.com/q/8735457
+function resizeScreen() {
+  var sW = window.screen.width, sH = window.screen.height;
+  var ratio = Math.min(sW / 800, sH / 500);
+  if (ratio < 1) {
+    $('#viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes');
+  } else {
+    $('#viewport').attr('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=yes, width=800');
+  }
+}
 
+resizeScreen();
+$(window).resize(resizeScreen);
 $('#scene-preload').show();
 
 });
