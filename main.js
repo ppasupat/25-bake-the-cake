@@ -1,13 +1,6 @@
 $(function () {
 
-// ################################
-// Handle screen resizing
-
-// TODO
-
-
-
-
+var DEBUG = true;
 
 // ################################
 // Helper methods
@@ -92,7 +85,7 @@ $('#o-oven').click(function () {
     $('#o-oven').addClass('filled');
     use('i-foil');
     endGame();
-  }
+  } else if (DEBUG) endGame();
 });
 
 $('#o-butter').click(function () {
@@ -103,8 +96,7 @@ $('#o-butter').click(function () {
 // living
 
 var codes = { code1: 0, code2: 0, code3: 0 };
-// Debug
-var codes = { code1: 5, code2: 9, code3: 7 };
+if (DEBUG) codes = { code1: 5, code2: 9, code3: 7 };
 
 $('#code1, #code2, #code3').click(function () {
   var x = $(this), id = $(x).attr('id'), value = (codes[id] + 1) % 10;
@@ -222,13 +214,31 @@ $('#o-big-bowl').click(function () {
 // End game sequence
 
 function endGame() {
-
+  $('#scene-cover').fadeIn(2000, function () {
+    $('#scene-congrats').show();
+    $('#scene-cover').fadeOut(2000, function () {
+      $('#o-happy').show();
+      setTimeout(function () {
+        $('#o-birthday').show();
+        setTimeout(function () {
+          $('#o-to').show();
+          setTimeout(function () {
+            $('#o-name, #o-c-picture').show();
+            setTimeout(function () {
+              $('#o-c-glasses').show();
+            }, 2000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    });
+  });
 }
 
 // ################################
 // READY!
 
-$('#scene-preload').show();
+// Handle screen resizing
 
+$('#scene-preload').show();
 
 });
