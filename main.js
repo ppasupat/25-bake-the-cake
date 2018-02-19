@@ -34,10 +34,10 @@ $('.item').click(function () {
   } else {
     // Combine items?
     var prev = getSelected();
-    if ((xid = 'i-butter' && prev == 'i-boil') || (xid == 'i-boil' && prev == 'i-butter')) {
+    if ((xid == 'i-butter' && prev == 'i-boil') || (xid == 'i-boil' && prev == 'i-butter')) {
       use('i-butter');
       $('#i-boil').addClass('buttered');
-    } else if ((xid = 'i-mixer' && prev == 'i-coil') || (xid == 'i-coil' && prev == 'i-mixer')) {
+    } else if ((xid == 'i-mixer' && prev == 'i-coil') || (xid == 'i-coil' && prev == 'i-mixer')) {
       use('i-coil');
       $('#i-mixer').addClass('good');
       $('#i-S').addClass('taken');
@@ -116,6 +116,10 @@ $('#o-F').click(function () {
   take('F');
 });
 
+$('#o-seed').click(function () {
+  take('seed');
+});
+
 var machineMap = {'i-B': 'boil', 'i-C': 'coil', 'i-F': 'foil', 'i-S': 'soil'};
 
 $('#o-machine-input').click(function () {
@@ -142,9 +146,12 @@ $('#o-plant').click(function () {
   } else if (s == 'i-seed' && x.hasClass('soiled')) {
     use('i-seed');
     x.addClass('planted').removeClass('soiled');
-  } else if (x.hasClass('planted')) {
-    x.addClass('harvested').removeClass('planted');
+    $('#o-fruit').addClass('reachable');
   }
+});
+
+$('#o-fruit').click(function () {
+  take('fruit');
 });
 
 // ################################
