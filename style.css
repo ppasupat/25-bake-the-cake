@@ -26,8 +26,7 @@ body {
 }
 
 #game {
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  position: relative;
   background-color: white;
   width: 800px;
   height: 500px;
@@ -39,7 +38,6 @@ body {
   width: 800px;
   height: 350px;
   left: 0; top: 0;
-  display: none;
 }
 
 #toolbox {
@@ -72,6 +70,8 @@ body {
 
 /* ################################ */
 /* preload */
+
+#scene-preload { background-color: white; }
 
 #o-loading {
   left: 0; top: 100px; width: 800px; height: 25px;
