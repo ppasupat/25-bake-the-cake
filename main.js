@@ -54,6 +54,90 @@ function use(x) {
 // ################################
 // preload
 
+var imageList = [
+"assets/apple.png",
+"assets/big-bowl.png",
+"assets/birthday.png",
+"assets/boil-buttered.png",
+"assets/boil.png",
+"assets/bowl.png",
+"assets/B.png",
+"assets/butter.png",
+"assets/cake.png",
+"assets/caliper.png",
+"assets/check.png",
+"assets/chicken-eggs.png",
+"assets/chicken.png",
+"assets/code.png",
+"assets/coil.png",
+"assets/copernicus.png",
+"assets/C.png",
+"assets/cupboard-close.png",
+"assets/cupboard-open.png",
+"assets/down.png",
+"assets/drawer-open.png",
+"assets/drawer.png",
+"assets/eggs.png",
+"assets/foil-filled.png",
+"assets/foil.png",
+"assets/F.png",
+"assets/fridge-close.png",
+"assets/fridge-open.png",
+"assets/fruit.png",
+"assets/galileo.png",
+"assets/glasses.png",
+"assets/happy.png",
+"assets/left.png",
+"assets/machine.png",
+"assets/mixer-bad.png",
+"assets/mixer-good.png",
+"assets/mixer.png",
+"assets/mixture-butter.png",
+"assets/mixture-eggs.png",
+"assets/mixture-fruit.png",
+"assets/mixture-mixed.png",
+"assets/mixture-sugar.png",
+"assets/moon.png",
+"assets/name.png",
+"assets/newton.png",
+"assets/oven-filled.png",
+"assets/oven.png",
+"assets/plant-planted.png",
+"assets/plant.png",
+"assets/plant-soiled.png",
+"assets/recipe.png",
+"assets/recipe-text.png",
+"assets/right.png",
+"assets/seed.png",
+"assets/soil.png",
+"assets/S.png",
+"assets/stars.png",
+"assets/sugar.png",
+"assets/table.png",
+"assets/to.png",
+"assets/up.png",
+];
+var numResourcesLeft = imageList.length;
+$('#o-loading').text('Loading resources (' + numResourcesLeft + ' left)');
+
+function decrementPreload () {
+  numResourcesLeft--;
+  if (numResourcesLeft == 0) {
+    $('#o-loading').text('Loading complete');
+    $('#o-start').show();
+  } else {
+    $('#o-loading').text('Loading resources (' + numResourcesLeft + ' left)');
+  }
+}
+
+var images = [];
+imageList.forEach(function (x) {
+  var img = new Image();
+  img.onload = decrementPreload;
+  img.src = x;
+  images.push(img);
+});
+
 $('#o-start').click(function () {
   switchScene('kitchen');
 });
