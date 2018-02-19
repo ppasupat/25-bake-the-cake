@@ -243,7 +243,7 @@ body {
 }
 
 #o-fruit {
-  top: 110px; left: 640px; width: 60px; height: 60px;
+  top: 105px; left: 640px; width: 70px; height: 80px;
   background-image: url('assets/fruit.png');
 }
 
@@ -308,6 +308,23 @@ body {
   left: 450px; top: 20px; width: 320px; height: 280px;
   background-image: url('assets/recipe.png');
 }
+
+.check {
+  position: absolute; display: none;
+  width: 20px; height: 20px;
+  background-image: url('assets/check.png');
+}
+#check1 { left: 55px; top: 50px; display: block; }
+#check2 { left: 52px; top: 72px; }
+#check3 { left: 37px; top: 157px; }
+#check4 { left: 30px; top: 190px; }
+#check21 { left: 132px; top: 78px; }
+#check22 { left: 172px; top: 79px; }
+#check23 { left: 223px; top: 80px; }
+#check24 { left: 140px; top: 103px; }
+#check25 { left: 195px; top: 107px; }
+#check26 { left: 160px; top: 133px; }
+#check27 { left: 250px; top: 135px; }
 
 /* ################################ */
 /* item */
@@ -379,6 +396,6 @@ body {
 }
 
 #i-fruit {
-  left: 730px; top: 20px; width: 60px; height: 60px;
+  left: 720px; top: 10px; width: 70px; height: 80px;
   background-image: url('assets/fruit.png');
 }
