@@ -7,6 +7,10 @@ html {
   touch-action: manipulation;
 }
 
+body {
+  min-height: 800px;
+}
+
 div {
   margin: 0;
   padding: 0;
