@@ -59,11 +59,6 @@ function use(x) {
 }
 
 // ################################
-// Game state
-
-
-
-// ################################
 // preload
 
 $('#o-start').click(function () {
@@ -89,6 +84,15 @@ $('#o-sugar').click(function () {
 $('#o-fridge').click(function () {
   $(this).toggleClass('open');
   $('#o-butter').toggleClass('reachable');
+});
+
+$('#o-oven').click(function () {
+  var s = getSelected();
+  if (s == 'i-foil' && $('#i-foil').hasClass('filled')) {
+    $('#o-oven').addClass('filled');
+    use('i-foil');
+    endGame();
+  }
 });
 
 $('#o-butter').click(function () {
@@ -175,6 +179,51 @@ $('#o-chicken').click(function () {
     $('#i-eggs').addClass('taken');
   }
 });
+
+// ################################
+// tabletop
+
+var ingredientsAdded = 0;
+
+$('#o-big-bowl').click(function () {
+  var s = getSelected();
+  if (s == 'i-sugar') {
+    $('#mixture-sugar, #check21, #check22, #check23, #check24').show();
+    use('i-sugar');
+    ingredientsAdded += 1
+    if (ingredientsAdded == 4) $('#check2').show();
+  } if (s == 'i-eggs') {
+    $('#mixture-eggs, #check25').show();
+    use('i-eggs');
+    ingredientsAdded += 1
+    if (ingredientsAdded == 4) $('#check2').show();
+  } else if (s == 'i-boil' && $('#i-boil').hasClass('buttered')) {
+    $('#mixture-butter, #check26').show();
+    use('i-boil');
+    ingredientsAdded += 1
+    if (ingredientsAdded == 4) $('#check2').show();
+  } else if (s == 'i-fruit') {
+    $('#mixture-fruit, #check27').show();
+    use('i-fruit');
+    ingredientsAdded += 1
+    if (ingredientsAdded == 4) $('#check2').show();
+  } else if (s == 'i-mixer' && $('#i-mixer').hasClass('good') && ingredientsAdded == 4) {
+    $('.mixture').hide();
+    $('#mixture-mixed, #check3').show();
+    use('i-mixer');
+  } else if (s == 'i-foil') {
+    $('.mixture').hide();
+    $('#check4').show();
+    $('#i-foil').removeClass('selected').addClass('filled');
+  }
+});
+
+// ################################
+// End game sequence
+
+function endGame() {
+
+}
 
 // ################################
 // READY!

@@ -303,6 +303,29 @@ body {
   left: 20px; top: 20px; width: 400px; height: 300px;
   background-image: url('assets/big-bowl.png');
 }
+.mixture {
+  position: absolute; display: none;
+}
+#mixture-sugar {
+  left: 40px; top: 100px; width: 330px; height: 110px;
+  background-image: url('assets/mixture-sugar.png');
+}
+#mixture-eggs {
+  left: 180px; top: 100px; width: 200px; height: 110px;
+  background-image: url('assets/mixture-eggs.png');
+}
+#mixture-butter {
+  left: 60px; top: 130px; width: 140px; height: 80px;
+  background-image: url('assets/mixture-butter.png');
+}
+#mixture-fruit {
+  left: 120px; top: 140px; width: 120px; height: 70px;
+  background-image: url('assets/mixture-fruit.png');
+}
+#mixture-mixed {
+  left: 20px; top: 70px; width: 360px; height: 140px;
+  background-image: url('assets/mixture-mixed.png');
+}
 
 #o-recipe {
   left: 450px; top: 20px; width: 320px; height: 280px;
