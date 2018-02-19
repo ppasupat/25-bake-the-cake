@@ -324,13 +324,15 @@ function endGame() {
 // Handle screen resizing to 800 x 500
 // https://stackoverflow.com/q/8735457
 function resizeScreen() {
-  var sW = window.screen.width, sH = window.screen.height;
+  var sW = Math.min(window.screen.width, $(window).width());
+  var sH = Math.min(window.screen.height, $(window).height());
   var ratio = Math.min(sW / 800, sH / 500);
   if (ratio < 1) {
     $('#viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=no, width=' + (ratio * 800));
   } else {
     $('#viewport').attr('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=no, width=800');
   }
+  window.scroll(0, 1);
 }
 resizeScreen();
 $(window).resize(resizeScreen);
