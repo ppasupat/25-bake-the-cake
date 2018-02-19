@@ -327,7 +327,7 @@ function resizeScreen() {
   var sW = window.screen.width, sH = window.screen.height;
   var ratio = Math.min(sW / 800, sH / 500);
   if (ratio < 1) {
-    $('#viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes');
+    $('#viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + (ratio * 800));
   } else {
     $('#viewport').attr('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=yes, width=800');
   }
