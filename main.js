@@ -325,7 +325,7 @@ function endGame() {
 // https://stackoverflow.com/q/8735457
 function resizeScreen() {
   var sW = Math.min(window.screen.width, $(window).width());
-  var sH = Math.min(window.screen.height, $(window).height()) - 50;
+  var sH = Math.min(window.screen.height, $(window).height()) - 25;
   var ratio = Math.min(sW / 800, sH / 500);
   if (ratio < 1) {
     $('#viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=no, width=' + (ratio * 800));
