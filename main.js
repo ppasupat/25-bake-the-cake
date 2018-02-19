@@ -139,7 +139,9 @@ imageList.forEach(function (x) {
 });
 
 $('#o-start').click(function () {
+  $('#cover').show();
   switchScene('kitchen');
+  $('#cover').fadeOut(1000);
 });
 
 // ################################
@@ -208,12 +210,17 @@ $('#o-machine-input').click(function () {
   if (output !== undefined) {
     $('#o-machine-input-x, #o-machine-output-x').removeClass('xoil').addClass(output);
     use(s);
-    if (s == 'i-B' || s == 'i-C') {
-      $('#o-hint').show();
-      setTimeout(function () {
-        $('#o-hint').fadeOut(1000);
-      }, 2000);
-    }
+    $('#o-machine-light').show();
+    $('#cover').addClass('transparent').show();
+    $('#o-machine-light').fadeOut(1000, function () {
+      $('#cover').hide().removeClass('transparent');
+      if (s == 'i-B' || s == 'i-C') {
+        $('#o-hint').show();
+        setTimeout(function () {
+          $('#o-hint').fadeOut(1000);
+        }, 2000);
+      }
+    });
   }
 });
 
@@ -265,7 +272,7 @@ $('#o-chicken').click(function () {
 // ################################
 // tabletop
 
-var ingredientsAdded = 0;
+var ingredientsAdded = 0, mixed = false;
 
 $('#o-big-bowl').click(function () {
   var s = getSelected();
@@ -293,7 +300,8 @@ $('#o-big-bowl').click(function () {
     $('.mixture').hide();
     $('#mixture-mixed, #check3').show();
     use('i-mixer');
-  } else if (s == 'i-foil') {
+    mixed = true;
+  } else if (s == 'i-foil' && mixed) {
     $('.mixture').hide();
     $('#check4').show();
     $('#i-foil').removeClass('selected').addClass('filled');
@@ -304,9 +312,9 @@ $('#o-big-bowl').click(function () {
 // End game sequence
 
 function endGame() {
-  $('#scene-cover').fadeIn(2000, function () {
+  $('#cover').fadeIn(2000, function () {
     $('#scene-congrats').show();
-    $('#scene-cover').fadeOut(2000, function () {
+    $('#cover').fadeOut(2000, function () {
       $('#o-happy').show();
       setTimeout(function () {
         $('#o-birthday').show();

@@ -1,6 +1,7 @@
 /* RESET */
 * {
   font-family: sans-serif;
+  user-select: none;
 }
 
 html {
@@ -222,6 +223,10 @@ body {
   left: 10px; top: 10px; right: 10px; padding: 5px; font-size: 16px;
   background-color: #eee; display: none;
 }
+#o-machine-light {
+  left: 0; top: 0; right: 0; bottom: 0;
+  background-color: #FF1; display: none;
+}
 
 #o-machine-input {
   left: 10px; top: 170px; width: 100px; height: 90px;
@@ -406,7 +411,15 @@ body {
 /* ################################ */
 /* cover */
 
-#scene-cover { background-color: black; }
+#cover {
+  position: absolute;
+  left: 0; top: 0; width: 800px; height: 350px;
+  background-color: black;
+  display: none;
+}
+#cover.transparent {
+  background: none;
+}
 
 /* ################################ */
 /* item */
