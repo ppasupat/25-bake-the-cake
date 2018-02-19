@@ -3,6 +3,10 @@
   font-family: sans-serif;
 }
 
+html {
+  touch-action: manipulation;
+}
+
 div {
   margin: 0;
   padding: 0;
