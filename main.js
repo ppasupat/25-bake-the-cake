@@ -1,6 +1,6 @@
 $(function () {
 
-var DEBUG = true;
+var DEBUG = false;
 
 // ################################
 // Helper methods
