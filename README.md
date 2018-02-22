@@ -8,6 +8,7 @@ Play here: <https://ppasupat.github.io/bake-the-cake/>
 
 * Made with CSS + JS because I'm too lazy to learn game frameworks.
 * Objects are absolute-positioned divs with image backgrounds.
-* Object types states are denoted by classes.
+* Object types and states are denoted by classes.
 * Images are drawn with Google Drawings and Gimp,
   with some cliparts from [OpenClipArt](http://openclipart.org/) and images from [Wikipedia](https://en.wikipedia.org).
+* Scaling to fit screen by tweaking the viewport meta. It's hacky and buggy.
